@@ -10,7 +10,10 @@ puts "How many times should the animal make the noise?"
 
 times = gets.chomp.to_i
 
-puts "The " + animal + " goes " + (sound + " ")*times 
+sound_string = (sound + " ") * times
+comma_separated_string = sound_string.strip.gsub(' ', ', ')
+
+puts "The " + animal + " goes " + comma_separated_string
 
 # it's preferable to 'sanitize' the variable when it's given to you (during gets)
 #gsub method to remove middle spaces?
