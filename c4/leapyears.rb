@@ -18,7 +18,7 @@ end
 
 puts "The leap years between those years are:"
 
-while startyear < endyear 
+while startyear <= endyear 
 	
 	if startyear % 4 == 0 && startyear % 100 != 0
 		puts startyear
