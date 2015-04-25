@@ -1,0 +1,10 @@
+<h1> The Weather Today in <%= @zipcode %></h1>
+
+<h3> Today's high temperature will be <%= @hightemp %> degrees.</h3>
+<h3> The low temperature will be <%= @lowtemp %> degrees.</h3>
+
+<%= if @hightemp > 74
+		'<p>Yay! Shorts, baby!</p>'
+	else '<p>Better keep those pants on.</p>'
+	end %>
+
