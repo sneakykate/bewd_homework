@@ -1,0 +1,13 @@
+<h1>Super Secret Military Mainframe</h1>
+
+<!-- <form action ="/mainframe" method = "post">
+	<input type="text" name="secretcode">
+	<input type='submit' value="Submit Secret Code">
+
+</form> -->
+
+<%= form_tag ("/mainframe")do %>
+    <%= label_tag(:secretcode, "Login:") %>
+  	<%= text_field_tag(:secretcode) %>
+  	<%= submit_tag("Submit Secret Code") %>
+<% end %>
