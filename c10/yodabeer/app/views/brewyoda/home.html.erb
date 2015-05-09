@@ -1,0 +1,16 @@
+<div class = "container">
+
+<h1><%= @beerstyle %> </h1>
+
+<h2>Yoda says: "<%= @response.body %>."</h2>
+
+<p><%= @description.split('.')[1..10].join('.') %>.</p>
+
+<a class ="button" href="/anotherone"> Show me another beer. </a>
+
+
+<a class ="button" href="/cartoon"> I want a cartoon now. </a>
+
+<img id="yoda" src="http://eatrio.net/wp-content/uploads/2012/08/yodawithbeer.jpg">
+
+</div>
