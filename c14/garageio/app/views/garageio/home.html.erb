@@ -1,0 +1,15 @@
+<h1>Sweet Rides</h1>
+	<% if @cars.length != 0 %>
+		<table>
+			<% @cars.each do |item| %>
+			<tr>
+			<td><a href="/cars/<%= item.id %>"><%=item.Nickname %></a></td>
+			</tr>
+			<% end %>
+		</table>
+
+	<% else %>
+		<h2> No Cars Here ... </h2>
+	<% end %>
+
+<a href="/new"><button>Add a new car</button></a>

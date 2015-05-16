@@ -1,0 +1,13 @@
+		<%= form_for @car do |f| %>
+		Make
+		<%= f.text_field :Make %> </br>
+		Model
+		<%= f.text_field :Model %> </br>
+		Year
+		<%= f.number_field :Year %> </br>
+		Color 
+		<%= f.text_field :Color %> </br>
+		Nickname
+		<%= f.text_field :Nickname %> </br>		
+		<%= f.submit "Add a car" %>
+		<% end %>
