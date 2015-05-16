@@ -1,10 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Yoda's Brews</title>
+<link href='http://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
+</head>
+<body>
 <div class = "container">
 
 <h1><%= @beerstyle %> </h1>
 
 <h2>Yoda says: "<%= @response.body %>."</h2>
 
-<p><%= @description.split('.')[1..10].join('.') %>.</p>
+<p class = "googfont"><%= @description.split('.')[1..10].join('.') %>.</p>
 
 <a class ="button" href="/anotherone"> Show me another beer. </a>
 
@@ -14,3 +21,6 @@
 <img id="yoda" src="http://eatrio.net/wp-content/uploads/2012/08/yodawithbeer.jpg">
 
 </div>
+
+</body>
+</html>

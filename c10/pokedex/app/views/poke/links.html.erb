@@ -1,0 +1,9 @@
+<h1> Pokemon </h1>
+
+
+<!-- Put loop full of links -->
+
+<% @pokecharacters.each do |critter|%>
+	<p><a href="/<%= critter['name']%>" ><%=critter['name'] %> </a> </p>
+
+<% end %>
