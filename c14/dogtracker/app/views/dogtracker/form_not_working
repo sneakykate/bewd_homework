@@ -1,0 +1,11 @@
+<%= form_for @dogs do |f| %>
+	Name
+	<%= f.text_field :name %> </br>
+	Breed
+	<%= f.text_field :breed %> </br>
+	Age
+	<%= f.text_field :age %> </br>
+	Picture URL 
+	<%= f.text_field :img_url %> </br>
+	<%= f.submit "Add a dog" %>
+	<% end %>
