@@ -1,0 +1,10 @@
+<h1>Add Company</h1>
+
+<%= form_for @company do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br><br>
+  <%= f.submit 'Create Company' %>
+
+<% end %>

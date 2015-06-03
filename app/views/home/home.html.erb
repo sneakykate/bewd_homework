@@ -1,0 +1,24 @@
+<h1>LinkedOn</h1>
+
+<h2 class='home-page'>NOT PEACHPUFF PLEASE!</h2>
+
+<ul class='list-unstyled'>
+  <li><a href="/users/new">Signup A User</a></li>
+  <li><a href="/companies/new">Create A Company</a></li>
+</ul>
+<hr>
+
+<h2>Companies</h2>
+<% @companies.each do |c| %>
+  <ul>
+    <li><%= c.name %> | Employees: <%= c.users.pluck(:name).to_sentence %></li>
+  </ul>
+<% end %>
+<hr>
+
+<h2>Users</h2>
+<% @users.each do |u| %>
+  <ul>
+    <li><%= u.name %> | <%= u.email %></li>
+  </ul>
+<% end %>

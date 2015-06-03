@@ -4,7 +4,10 @@ class DogtrackerController < ActionController::Base
 		@dogs = Dog.all
 		@dog = Dog.new
 	end
-
+	
+	def new
+		@dog = Dog.new
+	end
 
 	def show
 		@dog = Dog.find(params['id'])
@@ -16,7 +19,9 @@ class DogtrackerController < ActionController::Base
 		if @dog.save
 			redirect_to '/'
 		else
-			render :home
+			@errors = @dog.errors.full_messages
+			render :new
+
 		end
 	end
 

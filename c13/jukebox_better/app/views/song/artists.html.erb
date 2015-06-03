@@ -1,0 +1,9 @@
+<h1> All the Songs </h1>
+
+		<ul>
+			<% @songs.each do |item| %>
+				<li> <%=item.Artist%> - <%=item.Title%> - <%=item.Year%> - <%=item.Time%></li>
+			<% end %>
+
+
+		</ul>
