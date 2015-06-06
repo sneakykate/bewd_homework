@@ -1,0 +1,18 @@
+<h1><%= @user.name %> </h1>
+
+<h2> Skills</h2>
+
+<% @user.skills.each do |r| %>
+    <ul>
+      <li><%= r.skill_name %></li>
+    </ul>
+    <% end %>
+
+<h3> <a href="<%= new_experience_path%>" > Add my skills </a>
+
+<h4> <a href="<%= new_skill_path %>" >Add a totally new Skill </a></h4>
+
+
+
+
+<h2> <%= @user.company.name %>

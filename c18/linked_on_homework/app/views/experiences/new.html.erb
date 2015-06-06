@@ -1,0 +1,14 @@
+<h1>Add a User's Skill</h1>
+
+<%= form_for @experience do |f| %>
+
+<%= f.collection_select :user_id, User.all, :id, :name %>
+  <br><br>
+<%= f.collection_select :skill_id, Skill.all, :id, :skill_name %>
+  <br><br>
+
+  <%= f.submit 'Add Skill to User' %>
+
+<% end %>
+
+<h3> Don't see your special skill? <a href="<%= new_skill_path %>" > Add A New One! </a> </h3>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LinkedOn</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <% if current_user %>
+    You are currently logged in as <%= current_user.name %> | <%= link_to 'Logout', '/logout' %>
+  <% else %>
+    You are not logged in | <%= link_to 'Login', '/login' %>
+  <% end %>
+
+  <% if flash[:message] %>
+    <b><%= flash[:message] %></b>
+  <% end %>
+
+<%= yield %>
+
+</body>
+</html>
