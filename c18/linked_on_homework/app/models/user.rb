@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_many :experiences
   has_many :skills, through: :experiences
 
-  belongs_to :company
+  belongs_to :company #belongs to can be before or after has_many, doesn't matter.
 
   validates_presence_of :name, :company_id
 

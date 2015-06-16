@@ -1,0 +1,6 @@
+<h1> Add a skill to your profile</h1>
+
+<%= form_tag '/skills/add' do %>
+  <%= collection_select :skill_id, Skill.all, :id, :name %>
+
+<% end %>

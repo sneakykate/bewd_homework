@@ -6,9 +6,9 @@ class ExperiencesController < ApplicationController
 
   def create
     @experience = Experience.new(experience_params)
-
+    @user = user_id
     if @experience.save
-      redirect_to '/'
+        redirect_to user_path(@user)
     else
       render :new
     end

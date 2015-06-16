@@ -1,5 +1,10 @@
 class SkillsController < ApplicationController
 
+  def pick
+    #render form
+  end
+
+
   def new
     @skill = Skill.new
   end
@@ -8,7 +13,8 @@ class SkillsController < ApplicationController
     @skill = Skill.new(skill_params)
 
     if @skill.save
-      redirect_to '/'
+      redirect_to '/users/#{@user.id}'
+
     else
       render :new
     end
