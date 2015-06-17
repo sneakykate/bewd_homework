@@ -1,0 +1,29 @@
+<h2> Add a Client </h2>
+
+<!-- add a form for adding a client -->
+<%= form_for @client do |f| %>
+
+  <%= f.label :clientname %>
+  <%= f.text_field :clientname %>
+  <br>
+  <%= f.label :commissionstype %>
+  <%= f.text_field :commissionstype %>
+  <br>
+  <%= f.label :AM_name %>
+  <%= f.text_field :AM_name %>
+  <br>
+  <%= f.label :PM_or_AC_name %>
+  <%= f.text_field :PM_or_AC_name %>
+  <br>
+  <%= f.label :PM_or_AC2_name %>
+  <%= f.text_field :PM_or_AC2_name %>
+  <br>
+  <%= f.label :Analytics_name %>
+  <%= f.text_field :Analytics_name %>
+  <br>
+  <%= f.submit 'Create Company' %>
+
+<% end %>
+
+
+<a href="/"> Go Back to Home </a>

@@ -3,6 +3,6 @@
   <h3>Clients</h3>
     <ul>
       <% @clients.each do |y| %>
-      <li><%= y.clientname %> </li>
+      <li><a href="<%= client_path(y.id)%>"><%= y.clientname %></a> </li>
       <% end %>
     </ul>

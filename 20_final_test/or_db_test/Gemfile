@@ -44,3 +44,8 @@ group :development, :test do
 end
 
 gem 'hirb'
+gem 'twitter-bootstrap-rails'
+gem 'figaro' # for storing sensitive data
+
+gem 'carrierwave' # for file uploads
+gem 'fog' # for uploading to AWS
