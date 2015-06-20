@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   resources :shows
   resources :airings
   resources :clients
+  resources :networks
 
 end

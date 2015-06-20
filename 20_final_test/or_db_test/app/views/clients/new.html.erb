@@ -3,27 +3,26 @@
 <!-- add a form for adding a client -->
 <%= form_for @client do |f| %>
 
-  <%= f.label :clientname %>
+  <%= f.label "Client Name" %>
   <%= f.text_field :clientname %>
-  <br>
-  <%= f.label :commissionstype %>
-  <%= f.text_field :commissionstype %>
-  <br>
+  <br><br>
+  <%= f.label "Commissions Type" %>
+  <%= f.text_field :commissionstype , placeholder: "15% of gross"%>
+  <br><br>
   <%= f.label :AM_name %>
   <%= f.text_field :AM_name %>
-  <br>
+  <br><br>
   <%= f.label :PM_or_AC_name %>
   <%= f.text_field :PM_or_AC_name %>
-  <br>
+  <br><br>
   <%= f.label :PM_or_AC2_name %>
   <%= f.text_field :PM_or_AC2_name %>
-  <br>
+  <br><br>
   <%= f.label :Analytics_name %>
   <%= f.text_field :Analytics_name %>
-  <br>
-  <%= f.submit 'Create Company' %>
+  <br><br>
+  <%= f.submit 'Create Company', :class => 'submit_button'  %>
 
 <% end %>
 
 
-<a href="/"> Go Back to Home </a>

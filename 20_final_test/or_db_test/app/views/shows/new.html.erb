@@ -1,0 +1,19 @@
+<h2> Add a Show </h2>
+
+<!-- add a form for adding a network -->
+<%= form_for @show do |f| %>
+
+  <%= f.label :showname %>
+  <%= f.text_field :showname %>
+  <br><br>
+  <%= f.label "Network" %>
+  <%= f.collection_select :network_id, Network.all, :id, :netname %>
+
+  <span class = "small_link" >need to <a href="<%=new_network_path%>">Create A Network</a> first?</span>
+  <br>
+  <br>
+
+  <%= f.submit 'Create Show', :class => 'submit_button' %>
+
+<% end %>
+

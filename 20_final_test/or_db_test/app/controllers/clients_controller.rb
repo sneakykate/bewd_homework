@@ -15,11 +15,12 @@ class ClientsController < ApplicationController
   end
   
   def index
-    @client = Client.all
+    @client = Client.order(:clientname)
   end
 
   def show
     @client = Client.find(params[:id])
+    @airing = Airing.all
   end
 
 private

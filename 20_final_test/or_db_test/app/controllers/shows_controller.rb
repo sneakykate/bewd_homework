@@ -3,7 +3,7 @@ class ShowsController < ApplicationController
   def new
     @show = Show.new
     #Not sure I'll use this, find the network for the show...add from within network? TBD
-    @network = Network.find(params[:network_id])
+    #@network = Network.find(params[:network_id])
   end
 
   def create

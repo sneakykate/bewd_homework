@@ -1,14 +1,43 @@
 <h1><%= @client.clientname %></h1>
-<h4>AM: <%= @client.AM_name %></h4>
-<h4>PM/AC: <%= @client.PM_or_AC_name %></h4>
 
-<table>
-  <th>A schedule and costs goes here</th>
-  <th>Week</th>
-  <th>Cost</th>
+<h4>Commissions structure:<%= @client.commissionstype %> </h4>
+<div class = "team">
+    <% if @client.AM_name %>
+        <p> AM: <%= @client.AM_name %></p>
+        <% end%>
+    <% if @client.PM_or_AC_name %>
+      <p>PM/AC: <%= @client.PM_or_AC_name %></p>
+      <% end %>
+    <% if @client.PM_or_AC2_name %>
+      <p>PM/AC: <%= @client.PM_or_AC2_name %></p>
+      <% end %>
+    <% if @client.Analytics_name %>
+      <p>Analytics: <%= @client.Analytics_name %></p>
+      <% end %>
+  </div> <!--end team div-->
+      
+<h3> Schedule</h3>
+
+
+<%= link_to "Add to the schedule for #{@client.clientname}", new_airing_path(client_id: @client.id) %>
+
+<table class = "schedule">
+  <th>Show</th>
+  <th>Date</th>
+  <th>Gross</th>
+  <th>Net</th>
+  <% @client.airings.each do |g|%>
   <tr>
-    <td>Dummy Show</td>
-    <td>Dummy Week</td>
-    <td>Dummy Cost</td>
+    <td><%=g.show.showname%></td>
+    <td><%=g.airdate%></td>
+    <td>$<%=g.gross_cost%></td>
+    <td>$<%=g.net_cost%></td>
   </tr>
+  <%end%>
+  <tr>
+    <td>~~~TOTALS~~~</td>
+    <td> </td>
+    <td>$<%=@client.airings.sum(:gross_cost)%></td>
+    <td>$<%=@client.airings.sum(:net_cost)%></td>
+  <tr>
 </table> 

@@ -2,28 +2,28 @@ class AiringsController < ApplicationController
 
   def new
     @airing = Airing.new
-    #not sure I'll use this either, but look up show from params?
-    @show = Show.find(params[:show_id])
+    #not sure I'll use this either, but look up client from params?
+    @client = Client.find(params[:client_id])
   end
 
   def create
     @airing = Airing.new(airing_params)
 
-    if @show.save
+    if @airing.save
       #after we successfully add a show, take me to adding airings of the show
-      redirect_to new_airing_path
+      redirect_to client_path(airing_params[:client_id])
     else
       # if the post fails, I need to look up the network again
-      # because new.html.erb includes the @network instance variable.
-      @network = Network.find(params[:network_id])
-      render :new
+      # because new.html.erb includes the @client instance variable.
+      @client = Client.find(airing_params[:client_id])
+      render client_path(@client)
     end
   end
 
 private
 
   def airing_params
-    params.require(:airing, :date).permit(:showname, :network_id, :placement)
+    params.require(:airing).permit(:show_id, :client_id, :net_cost, :gross_cost, :airdate, :airweek_id)
   end
 
 end

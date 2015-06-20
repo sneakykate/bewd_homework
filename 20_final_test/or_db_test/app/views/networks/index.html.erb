@@ -1,0 +1,5 @@
+<ul>
+      <% @network.each do |y| %>
+      <li><a href="<%= network_path(y.id)%>"><%= y.netname %></a> </li>
+      <% end %>
+    </ul>

@@ -1,0 +1,17 @@
+<h2> Add a Network </h2>
+
+<!-- add a form for adding a network -->
+<%= form_for @network do |f| %>
+
+  <%= f.label "Name of Network" %>
+  <%= f.text_field :netname %>
+  <br><br>
+  
+  <%= f.label "Select Billing Schedule" %>
+  <!-- figure out how to add a form selector for boolean -->
+  <%= f.select :bcast_month, [['Broadcast', true], ['Calendar', false]] %>
+  <br><br>
+  <%= f.submit 'Create Network' , :class => 'submit_button' %>
+
+<% end %>
+
