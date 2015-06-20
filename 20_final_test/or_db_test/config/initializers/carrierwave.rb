@@ -11,7 +11,7 @@ puts "Starting Carrierwave setup"
       # :host                 => 's3.example.com',             # optional, defaults to nil
       # :endpoint             => 'https://s3.example.com:8080' # optional, defaults to nil
     }
-    config.fog_directory    = "linkedon-123456-#{Rails.env}"     # required
+    config.fog_directory    = "or-db-test-#{Rails.env}"     # required
     # config.fog_public     = true                              # optional, defaults to true
     # config.fog_attributes = {'Cache-Control'=>'max-age=3600'} # optional, defaults to {}
   end

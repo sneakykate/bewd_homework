@@ -1,4 +1,6 @@
 class ClientsController < ApplicationController
+ 
+ before_action :authorize
 
   def new
     @client = Client.new
@@ -6,6 +8,10 @@ class ClientsController < ApplicationController
 
   def create
     @client = Client.new(client_params)
+#     @client.logourl = nil
+    
+# #add the rest of the stuff for this   
+#    LogoUploader.perform_async(@client.id, client_params[:logourl]) # worker
 
     if @client.save
       redirect_to '/'
@@ -26,7 +32,7 @@ class ClientsController < ApplicationController
 private
 
   def client_params
-    params.require(:client).permit(:clientname, :commissionstype, :AM_name, :PM_or_AC_name, :PM_or_AC2_name, :Analytics_name)
+    params.require(:client).permit(:clientname, :commissionstype, :AM_name, :PM_or_AC_name, :PM_or_AC2_name, :Analytics_name, :logourl)
   end
 
 end

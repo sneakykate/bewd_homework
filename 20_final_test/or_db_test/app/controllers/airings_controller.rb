@@ -1,5 +1,7 @@
 class AiringsController < ApplicationController
 
+  before_action :authorize
+
   def new
     @airing = Airing.new
     #not sure I'll use this either, but look up client from params?
@@ -13,6 +15,7 @@ class AiringsController < ApplicationController
       #after we successfully add a show, take me to adding airings of the show
       redirect_to client_path(airing_params[:client_id])
     else
+      flash[:message] = "Info Missing, Please try again."
       # if the post fails, I need to look up the network again
       # because new.html.erb includes the @client instance variable.
       @client = Client.find(airing_params[:client_id])

@@ -1,5 +1,7 @@
 class NetworksController < ApplicationController
 
+ before_action :authorize
+
   def new
     @network = Network.new
     #Not sure I'll use this, find the network for the show...add from within network? TBD
@@ -9,8 +11,8 @@ class NetworksController < ApplicationController
     @network = Network.new(network_params)
 
     if @network.save
-      #after we successfully add a show, take me to adding airings of the show
-      redirect_to '/'
+      #after we successfully add a network, take me to adding show
+      redirect_to new_show_path
     else
       render :new
     end

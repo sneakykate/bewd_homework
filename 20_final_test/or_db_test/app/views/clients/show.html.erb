@@ -1,7 +1,14 @@
-<h1><%= @client.clientname %></h1>
 
-<h4>Commissions structure:<%= @client.commissionstype %> </h4>
-<div class = "team">
+
+<div class = "row">
+  <div class ="col-md-8">
+    <img src="<%=@client.logourl.url%>" class="logopic">
+    <div class="clear"></div>
+    <h1><%= @client.clientname %></h1>
+    <h5>Commissions structure:<%= @client.commissionstype %> </h5>
+  </div>
+  <div class="col-md-4">
+    <h5><b>Team</b></h5>
     <% if @client.AM_name %>
         <p> AM: <%= @client.AM_name %></p>
         <% end%>
@@ -14,12 +21,14 @@
     <% if @client.Analytics_name %>
       <p>Analytics: <%= @client.Analytics_name %></p>
       <% end %>
-  </div> <!--end team div-->
+  </div> <!--end team col div-->
+
+</div><!--end row-->
       
 <h3> Schedule</h3>
 
 
-<%= link_to "Add to the schedule for #{@client.clientname}", new_airing_path(client_id: @client.id) %>
+<%= link_to "Add to schedule for #{@client.clientname}", new_airing_path(client_id: @client.id) %>
 
 <table class = "schedule">
   <th>Show</th>

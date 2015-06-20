@@ -9,19 +9,22 @@
   <%= f.label "Commissions Type" %>
   <%= f.text_field :commissionstype , placeholder: "15% of gross"%>
   <br><br>
-  <%= f.label :AM_name %>
+  <%= f.label "Account Manager" %>
   <%= f.text_field :AM_name %>
   <br><br>
-  <%= f.label :PM_or_AC_name %>
+  <%= f.label "PM or AC" %>
   <%= f.text_field :PM_or_AC_name %>
   <br><br>
-  <%= f.label :PM_or_AC2_name %>
+  <%= f.label "Second PM or AC" %>
   <%= f.text_field :PM_or_AC2_name %>
   <br><br>
-  <%= f.label :Analytics_name %>
+  <%= f.label "Analytics Lead" %>
   <%= f.text_field :Analytics_name %>
   <br><br>
-  <%= f.submit 'Create Company', :class => 'submit_button'  %>
+   <%= f.label :logourl %>
+  <%= f.file_field :logourl %>
+  <br><br>
+  <%= f.submit 'Create Company', :class => 'btn btn-primary btn-lg'  %>
 
 <% end %>
 
