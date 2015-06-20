@@ -13,7 +13,7 @@ class ShowsController < ApplicationController
     
     if @show.save
       #after we successfully add a show, take me to adding airings of the show
-      redirect_to new_airing_path
+      redirect_to '/'
     else
       flash[:message] = "Info Missing, Please try again."
       render :new
